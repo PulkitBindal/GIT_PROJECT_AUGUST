@@ -2,19 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Cleaning') {
+        stage('BUILDING') {
             steps {
-                mvn clean
-            }
-        }
-        stage('Validating') {
-            steps {
-                mvn validate
-            }
-        }
-        stage('Installing') {
-            steps {
-                mvn install
+                mvn clean install
             }
         }
     }
