@@ -1,10 +1,9 @@
 pipeline {
-    agent any
-
+    agent { docker { image 'python:3.11.4-alpine3.18' } }
     stages {
-        stage('BUILDING') {
+        stage('build') {
             steps {
-                mvn clean install
+                sh 'python --version'
             }
         }
     }
